@@ -8,8 +8,8 @@ namespace Utils
         public int ApplicantCount { get; set; }
         public string MedicalHistory { get; set; }
         public string Risk { get; set; }
-        public string ApplicationMode { get; set; }
-        public string Reasons { get; set; }
+        public string ApplicationMethod { get; set; }
+        public string Justification { get; set; }
         public string Notes { get; set; }
     }
 
@@ -19,7 +19,7 @@ namespace Utils
         public string Date { get; set; }
         public string Medium { get; set; }
         public string Risk { get; set; }
-        public string Reason { get; set; }
+        public string Justification { get; set; }
         public string Importance { get; set; }
     }
 }
