@@ -12,4 +12,14 @@ namespace Utils
         public string Reasons { get; set; }
         public string Notes { get; set; }
     }
+
+    public record Relic
+    {
+        public string Name { get; set; }
+        public string Date { get; set; }
+        public string Medium { get; set; }
+        public string Risk { get; set; }
+        public string Reason { get; set; }
+        public string Importance { get; set; }
+    }
 }
