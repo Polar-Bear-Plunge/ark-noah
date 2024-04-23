@@ -38,7 +38,7 @@ namespace Utils
 
     public class ApplicationsRepository
     {
-        private Applications _applications;
+        private readonly Applications _applications;
         public ApplicationsRepository(string fileName)
         {
             string data = Resources.Load<TextAsset>(fileName).text;
