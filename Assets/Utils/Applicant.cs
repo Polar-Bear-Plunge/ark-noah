@@ -1,5 +1,17 @@
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace Utils
 {
+    [Serializable]
+    public record Applications
+    {
+        public List<Applicant> Applicants { get; set; }
+        public List<Relic> Relics { get; set; }
+    }
+
+    [Serializable]
     public record Applicant
     {
         public string Name { get; set; }
@@ -13,6 +25,7 @@ namespace Utils
         public string Notes { get; set; }
     }
 
+    [Serializable]
     public record Relic
     {
         public string Name { get; set; }
@@ -21,5 +34,15 @@ namespace Utils
         public string Risk { get; set; }
         public string Justification { get; set; }
         public string Importance { get; set; }
+    }
+
+    public class ApplicationsRepository
+    {
+        private Applications _applications;
+        public ApplicationsRepository(string fileName)
+        {
+            string data = Resources.Load<TextAsset>(fileName).text;
+            _applications = JsonUtility.FromJson<Applications>(data);
+        }
     }
 }
