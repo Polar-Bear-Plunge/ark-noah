@@ -44,5 +44,15 @@ namespace Utils
             string data = Resources.Load<TextAsset>(fileName).text;
             _applications = JsonUtility.FromJson<Applications>(data);
         }
+
+        public Relic GetRandomRelic()
+        {
+            return _applications.Relics[UnityEngine.Random.Range(0, _applications.Relics.Count)];
+        }
+
+        public Applicant GetRandomApplicant()
+        {
+            return _applications.Applicants[UnityEngine.Random.Range(0, _applications.Applicants.Count)];
+        }
     }
 }
